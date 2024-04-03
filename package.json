@@ -2,7 +2,7 @@
   "name": "@heiwa4126/hello0-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "dist/prod/index.js",
   "scripts": {
     "example:dev": "npx tsc && node ./example/dev/index.mjs",
     "watch": "npx tsc -w",
@@ -11,7 +11,8 @@
     "build": "rm -rf ./dist/prod && npx tsc --project tsconfig.prod.json",
     "example:cjs": "node ./example/prod/index.cjs",
     "example:mjs": "node ./example/prod/index.mjs",
-    "example:mjs2": "node ./example/prod/index2.mjs"
+    "example:mjs2": "node ./example/prod/index2.mjs",
+    "example:ts": "cd ./example/prod-ts && npm run start"
   },
   "author": "heiwa4126@gmail.com",
   "license": "ISC",

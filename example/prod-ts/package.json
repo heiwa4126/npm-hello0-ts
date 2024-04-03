@@ -1,0 +1,13 @@
+{
+  "name": "@heiwa4126/hello0-ts-example-prod-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "commonjs",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npx tsc && node dist/index.js"
+  },
+  "author": "heiwa4126@gmail.com",
+  "license": "ISC"
+}
