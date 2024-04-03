@@ -1,13 +1,23 @@
 # npm-hello0-ts (@heiwa4126/hello0-ts)
 
-## 概要
+## Overview (概要)
 
-## 実行例
+A sample project written in Typescript that can be published on npmjs as a package compatible with CommonJS, ES Modules (and Typescript). Can be used as a template.
+
+Ultimately, it will be transpiled into CommonJS with .d.ts files and with ES Module interop.
+
+(Japanese translation)
+
+Typescript で書いて、CommonJS と ESModule(と Typescript)で使えるパッケージとして npmjs に発行できるサンプルプロジェクト。テンプレートとして使う。
+
+最終的には ESModule interop と.d.ts 付の CommonJS としてトランスパイルされる。
+
+## examples (実行例)
 
 ### CommonJS
 
 ```javascript
-const hello0ts = require("@heiwa4126/hello0-ts");
+const h0 = require("@heiwa4126/hello0-ts");
 
 console.log(h0.hello());
 
@@ -18,60 +28,25 @@ console.log(h.hello());
 ### ESModule and TypeScript
 
 ```javascript
-import hello0 from "@heiwa4126/hello0";
+import * as h0 from "@heiwa4126/hello0-ts";
 
-console.log(hello0.hello.hello());
+console.log(h0.hello());
 
-const h = new hello0.hello2.Hello("test");
+const h = new h0.Hello2("test");
 console.log(h.hello());
 ```
 
-## このパッケージを作った手順
+or
 
-1. 作業ディレクトリ作る。`mkdir hello0 && cd hello0`
-1. `pnpm init` する (pnpm はお好みで yarn でも npm でも)
-1. lib ディレクトリの下にモジュール書く。JSDoc も書く
-1. `./__tests__` の下にテストコード書く。今回は jest 使った。`pnpm i -D jest`
-1. package.json の"main"に設定されている`./index.js` にモジュールの export 追加する
-1. package.json の "scripts" を整える
-1. `pnpm run test` ぐらいはしておく
-1. 余裕があったら example コードを書く
+```javascript
+import { hello, Hello2 } from "@heiwa4126/hello0-ts";
 
-## ローカルな使い方 1
+console.log(hello());
 
-使う側で `npm i {ここへのパス}`
-
-パスは絶対でも相対でもいいみたい。`npm link`に比べてこっちのほうが使いやすいと思う。
-example/ 以下に含めて、実行可能にするなららこっちがいいと思う(微妙)。
-
-package.json は
-
-```json
-  "dependencies": {
-    "@heiwa4126/hello0": "file:../.."
-  }
+const h = new Hello2("test");
+console.log(h.hello());
 ```
 
-みたいになる。pnpm `pnpm i ../..` で package.json は "link:../.." になるが、
-それだと`npm i`で処理できない。
+## 開発
 
-## ローカルな使い方 2
-
-`pnpm link -g` または `npm link` で グローバルにリンクをはる。
-
-使う側で `npm link {モジュール名}`
-
-使い勝手に難がある。package.json の dependencies に書かれない。
-
-あと `npm unlink` は無いので
-
-```bash
-cd "$(npm config get prefix)/lib/node_modules"
-```
-
-して該当 symlink を rm すること。
-pnpm は `pnpm uninstall -g` があります。
-
-## 感想
-
-ESModule と Typescript 用に .d.ts を書かなきゃならないのが面倒
+[DEVELOP.md](DEVELOP.md) 参照

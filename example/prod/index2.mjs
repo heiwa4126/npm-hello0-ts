@@ -1,6 +1,7 @@
-import * as hello0ts from "../../dist/prod/index.js";
+import * as h0 from "../../dist/prod/index.js";
+// import * as h0 from "@heiwa4126/hello0-ts";
 
-console.log(hello0ts.hello());
+console.log(h0.hello());
 
-const h = new hello0ts.Hello2("test");
+const h = new h0.Hello2("test");
 console.log(h.hello());

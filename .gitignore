@@ -232,3 +232,6 @@ tags
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/node,emacs,vim,visualstudiocode
+
+# for `npm pack`
+.tgz
