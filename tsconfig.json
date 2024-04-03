@@ -10,6 +10,6 @@
     "outDir": "./dist/dev",
     "moduleResolution": "NodeNext"
   },
-  "include": ["src/**/*", "__tests__/**/*", "examples/**/*"],
+  "include": ["src/**/*", "__tests__/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
