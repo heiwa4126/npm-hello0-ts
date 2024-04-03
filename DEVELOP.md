@@ -24,7 +24,7 @@ npm run example:dev
 1. `npm i -D typescript @types/node jest @types/jest`
 1. `npx tsc --init` で出来た tsconfig.json を修正
 1. `npx jest --init` で出来た jest.config.js を修正
-1. `./src` ディレクトリの下にモジュール書く。JSDoc も書く。様々な理由でプロジェクトのルートには書かないほうがいい。
+1. `./src` ディレクトリの下にモジュール書く。JSDoc も書く。様々な理由でプロジェクトのルートには書かないほうがいい(example/prod-ts 直下に index.ts 書いて気が付いた)。
 1. `./__tests__` の下にテストコード書く。今回は jest で。
 1. package.json を整える。
 1. 余裕があったら example コードを書く
