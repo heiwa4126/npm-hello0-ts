@@ -97,4 +97,13 @@ node index.mjs
 
 ## npmjs に発行する
 
-(TODO)
+1. プロジェクトを GitHub に push する
+1. [npmjs にサインアップする](https://www.npmjs.com/signup)
+1. [npmjs にサインインする](https://www.npmjs.com/signin)
+
+ブラウザは開いたままで
+
+```sh
+npm login   # 最初の1回だけ。URLが出るのでブラウザで開く
+npm publish --access=public  # オプションが要るのは最初の1回だけ。以降は `npm publish` でOK。URLが出るのでブラウザで開く
+```
