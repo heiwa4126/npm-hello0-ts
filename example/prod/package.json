@@ -1,0 +1,12 @@
+{
+  "name": "@heiwa4126/hello0-ts-example-prod",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node ./index.mjs"
+  },
+  "author": "heiwa4126@gmail.com",
+  "license": "ISC"
+}

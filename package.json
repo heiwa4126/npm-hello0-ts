@@ -1,0 +1,23 @@
+{
+  "name": "@heiwa4126/hello0-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node ./dist/dev/index.js",
+    "example:dev": "npx tsc && node ./example/dev/index.mjs",
+    "example:cjs": "node ./example/prod/index.cjs",
+    "example:mjs": "node ./example/prod/index.mjs",
+    "watch": "npx tsc -w",
+    "test": "npx jest",
+    "build": "npx tsc --project tsconfig.prod.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.2",
+    "jest": "^29.7.0",
+    "typescript": "^5.4.3"
+  }
+}

@@ -1,0 +1,14 @@
+// 開発用にESModuleで出力
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "declaration": true,
+    "sourceMap": true,
+    "esModuleInterop": false,
+    "outDir": "./dist/dev",
+    "moduleResolution": "NodeNext"
+  },
+  "include": ["src/**/*", "__tests__/**/*", "examples/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

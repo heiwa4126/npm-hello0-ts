@@ -1,0 +1,14 @@
+// 出荷用にCommonJSで(ESModuleInteropと.d.ts付)
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "strict": true,
+    "declaration": true,
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "outDir": "./dist/prod"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

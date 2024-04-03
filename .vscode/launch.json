@@ -1,0 +1,27 @@
+{
+  // IntelliSense を使用して利用可能な属性を学べます。
+  // 既存の属性の説明をホバーして表示します。
+  // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // 開発中はたいてい `tsc -w` しているはずなのでbuildは不要
+      "type": "node",
+      "request": "launch",
+      "name": "run dist/index.js",
+      "program": "${workspaceFolder}/dist/index.js",
+      // "preLaunchTask": "tsc: build - tsconfig.json",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      // なんかの理由でbuildも要る時、こちらを使う
+      "type": "node",
+      "request": "launch",
+      "name": "build&run index.ts",
+      "program": "${workspaceFolder}/index.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "skipFiles": ["<node_internals>/**"],
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    }
+  ]
+}
