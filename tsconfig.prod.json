@@ -1,12 +1,13 @@
 // 出荷用にCommonJSで(ESModuleInteropと.d.ts付)
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ESNext",
     "module": "CommonJS",
     "strict": true,
     "declaration": true,
     "sourceMap": false,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "outDir": "./dist/prod"
   },
   "include": ["src/**/*"],
