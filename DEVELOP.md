@@ -107,3 +107,78 @@ node index.mjs
 npm login   # 最初の1回だけ。URLが出るのでブラウザで開く
 npm publish --access=public  # オプションが要るのは最初の1回だけ。以降は `npm publish` でOK。URLが出るのでブラウザで開く
 ```
+
+## GitHub Packages
+
+(未整理)
+
+1. package.json ファイルに publishConfig セクションを追加します。このセクションでは、パッケージを公開するレジストリとして GitHub Packages を指定します:
+
+   ```json
+   "publishConfig": {
+      "registry":"https://npm.pkg.github.com/"
+   }
+   ```
+
+1. GitHub のユーザ名をパッケージ名の前に追加します(name フィールド)。例えば、あなたの GitHub ユーザ名が `heiwa4126` であれば:
+
+   ```json
+   "name": "@heiwa4126/npm-hello0-ts",
+   ```
+
+1. パッケージを公開します。まず、GitHub のパーソナルアクセストークンを使用して npm にログインします:
+
+   ```sh
+   npm login --registry=https://npm.pkg.github.com/
+   ```
+
+1. 次に、パッケージを公開します:
+   ```sh
+   npm publish
+   ```
+
+これらの手順を実行すると、パッケージは GitHub Packages に公開されます。
+
+### GitHub Packages で公開したパッケージをインストールする方法は?
+
+(ここも未整理)
+
+1. .npmrc ファイルをプロジェクトのルートディレクトリに作成します(すでに存在する場合はそのまま使用します)。このファイルには、パッケージをインストールするレジストリとして GitHub Packages を指定します:
+
+   ```config
+   @heiwa4126:registry=https://npm.pkg.github.com/
+   ```
+
+   ここで、`@heiwa4126` はあなたの GitHub ユーザ名です。
+
+1. 次に、通常の npm install コマンドを使用してパッケージをインストールします:
+
+   ```sh
+   npm install @heiwa4126/npm-hello0-ts
+   ```
+
+これにより、GitHub Packages からパッケージがインストールされます。
+
+### GitHub Package のリポジトリが private な場合はどうしますか?
+
+GitHub Packages のリポジトリがプライベートの場合でも、パッケージをインストールすることは可能です。ただし、そのためには GitHub のパーソナルアクセストークンが必要となります。このトークンは、パッケージを読み取る権限を持つ必要があります。
+
+以下の手順でパッケージをインストールします:
+
+1. GitHub でパーソナルアクセストークンを生成します。これは [GitHub の設定ページ](https://github.com/settings/tokens) から行うことができます。トークンには read:packages のスコープを含める必要があります。
+
+2. 生成したトークンを使用して、npm にログインします:
+
+   ```sh
+   npm login --registry=https://npm.pkg.github.com/ --scope=@heiwa4126
+   ```
+
+   ここで、`@heiwa4126` はあなたの GitHub ユーザ名です。プロンプトが表示されたら、GitHub のユーザ名とパーソナルアクセストークンを入力します。
+
+3. 通常の npm install コマンドを使用してパッケージをインストールします:
+
+   ```sh
+   npm install @heiwa4126/npm-hello0-ts
+   ```
+
+これにより、プライベートな GitHub Packages からパッケージがインストールされます。
