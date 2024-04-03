@@ -1,8 +1,22 @@
 {
   "name": "@heiwa4126/hello0-ts",
   "version": "1.0.0",
-  "description": "",
+  "keywords": [
+    "demo"
+  ],
+  "description": "An example of npm module in Typescript",
+  "author": "heiwa4126",
+  "license": "ISC",
+  "engines": {
+    "node": ">=16"
+  },
   "main": "dist/prod/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heiwa4126/npm-hello0-ts"
+  },
+  "homepage": "https://github.com/heiwa4126/npm-hello0-ts#readme",
+  "bugs": {},
   "scripts": {
     "example:dev": "npx tsc && node ./example/dev/index.mjs",
     "watch": "npx tsc -w",
@@ -14,8 +28,12 @@
     "example:mjs2": "node ./example/prod/index2.mjs",
     "example:ts": "cd ./example/prod-ts && npm run start"
   },
-  "author": "heiwa4126@gmail.com",
-  "license": "ISC",
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "dist/prod"
+  ],
   "devDependencies": {
     "@types/jest": "~29",
     "@types/node": "~20",
