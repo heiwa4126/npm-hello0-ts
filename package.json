@@ -13,16 +13,18 @@
   "main": "dist/prod/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/heiwa4126/npm-hello0-ts"
+    "url": "git+https://github.com/heiwa4126/npm-hello0-ts"
   },
   "homepage": "https://github.com/heiwa4126/npm-hello0-ts#readme",
-  "bugs": {},
+  "bugs": {
+    "url": "https://github.com/heiwa4126/npm-hello0-ts/issues"
+  },
   "scripts": {
-    "example:dev": "npx tsc && node ./example/dev/index.mjs",
-    "watch": "npx tsc -w",
-    "test": "npx jest",
-    "build:dev": "rm -rf ./dist/dev && npx tsc",
-    "build": "rm -rf ./dist/prod && npx tsc --project tsconfig.prod.json",
+    "example:dev": "tsc && node ./example/dev/index.mjs",
+    "watch": "tsc -w",
+    "test": "jest",
+    "build:dev": "rm -rf ./dist/dev && tsc",
+    "build": "rm -rf ./dist/prod && tsc --project tsconfig.prod.json",
     "example:cjs": "node ./example/prod/index.cjs",
     "example:mjs": "node ./example/prod/index.mjs",
     "example:mjs2": "node ./example/prod/index2.mjs",
