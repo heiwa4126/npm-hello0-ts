@@ -1,45 +1,48 @@
 {
-  "name": "@heiwa4126/hello0-ts",
-  "version": "1.0.0",
-  "keywords": [
-    "demo"
-  ],
-  "description": "An example of npm module in Typescript",
-  "author": "heiwa4126",
-  "license": "ISC",
-  "engines": {
-    "node": ">=16"
-  },
-  "main": "dist/prod/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/heiwa4126/npm-hello0-ts"
-  },
-  "homepage": "https://github.com/heiwa4126/npm-hello0-ts#readme",
-  "bugs": {
-    "url": "https://github.com/heiwa4126/npm-hello0-ts/issues"
-  },
-  "scripts": {
-    "example:dev": "tsc && node ./example/dev/index.mjs",
-    "watch": "tsc -w",
-    "test": "jest",
-    "build:dev": "rm -rf ./dist/dev && tsc",
-    "build": "rm -rf ./dist/prod && tsc --project tsconfig.prod.json",
-    "example:cjs": "node ./example/prod/index.cjs",
-    "example:mjs": "node ./example/prod/index.mjs",
-    "example:mjs2": "node ./example/prod/index2.mjs",
-    "example:ts": "cd ./example/prod-ts && npm run start"
-  },
-  "files": [
-    "package.json",
-    "README.md",
-    "LICENSE",
-    "dist/prod"
-  ],
-  "devDependencies": {
-    "@types/jest": "~29.5.14",
-    "@types/node": "~20.19.37",
-    "jest": "~29.7.0",
-    "typescript": "~5.9.3"
-  }
+	"name": "@heiwa4126/hello0-ts",
+	"version": "1.0.0",
+	"description": "An example of npm module in Typescript",
+	"keywords": [
+		"demo"
+	],
+	"homepage": "https://github.com/heiwa4126/npm-hello0-ts#readme",
+	"bugs": {
+		"url": "https://github.com/heiwa4126/npm-hello0-ts/issues"
+	},
+	"license": "ISC",
+	"author": "heiwa4126",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/heiwa4126/npm-hello0-ts"
+	},
+	"files": [
+		"package.json",
+		"README.md",
+		"LICENSE",
+		"dist/prod"
+	],
+	"main": "dist/prod/index.js",
+	"scripts": {
+		"example:dev": "tsc && node ./example/dev/index.mjs",
+		"watch": "tsc -w",
+		"test": "jest",
+		"build:dev": "rm -rf ./dist/dev && tsc",
+		"build": "rm -rf ./dist/prod && tsc --project tsconfig.prod.json",
+		"example:cjs": "node ./example/prod/index.cjs",
+		"example:mjs": "node ./example/prod/index.mjs",
+		"example:mjs2": "node ./example/prod/index2.mjs",
+		"example:ts": "cd ./example/prod-ts && npm run start",
+		"format": "oxfmt",
+		"lint": "oxlint",
+		"check": "oxfmt && oxlint --fix"
+	},
+	"devDependencies": {
+		"@types/jest": "~30.0.0",
+		"@types/node": "~26.2.0",
+		"jest": "~30.4.2",
+		"typescript": "~7.0.2"
+	},
+	"engines": {
+		"node": ">=16"
+	}
 }

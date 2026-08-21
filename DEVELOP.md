@@ -42,7 +42,6 @@ npm run example:dev
 1. package.json の "version" を増やす
 1. `npm run build` で `./dist/prod` の下にトランスパイルする。
 1. サンプルコードが 3 種類あるので
-
    - `npm run example:cjs`
    - `npm run example:mjs`
    - `npm run example:ts`
@@ -90,7 +89,7 @@ cp -v ../hello0-ts/example/prod/index*.?js .
 node index.mjs
 ```
 
-これは 前のテストが symlink だったのに対して
+これは前のテストが symlink だったのに対して
 「package.json の files に書いたファイルだけ、それも symlink でなくてコピー」という違いがある。
 
 これは npmjs に上げた場合と同じ。

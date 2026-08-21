@@ -1,14 +1,13 @@
 // 開発用にESModuleで出力
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "declaration": true,
-    "sourceMap": true,
-    "esModuleInterop": false,
-    "skipLibCheck": false,
-    "outDir": "./dist/dev"
-  },
-  "include": ["src/**/*", "__tests__/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "NodeNext",
+		"declaration": true,
+		"sourceMap": true,
+		"skipLibCheck": false,
+		"outDir": "./dist/dev"
+	},
+	"include": ["src/**/*", "__tests__/**/*"],
+	"exclude": ["node_modules", "**/*.spec.ts"]
 }
