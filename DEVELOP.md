@@ -13,19 +13,19 @@ npm run example:dev
 
 ## このパッケージのポリシーのようなもの
 
-- 開発中は .d.ts と sourceMap 付の ESModule としてトランスパイル。./dist/dev/ 以下に出る。
-- 公開版は ESModule interop と.d.ts 付の CommonJS としてトランスパイル (他 skipLibCheck: true でライブラリの型チェックをスキップ)。./dist/prod/ 以下に出る。
-- ./dist/dev/ の方は `__tests__` がある分、1 個レベルが深い (./dist/prod と比較してみて)
+- 開発中は .d.ts と sourceMap 付の ESModule としてトランスパイル。./dist/dev/以下に出る。
+- 公開版は ESModule interop と.d.ts 付の CommonJS としてトランスパイル (他 skipLibCheck: true でライブラリの型チェックをスキップ)。./dist/prod/以下に出る。
+- ./dist/dev/の方は`__tests__`がある分、1 個レベルが深い (./dist/prod と比較してみて)
 
 ## このパッケージを作った手順
 
 1. 作業ディレクトリ作る。`mkdir hello0-ts && cd hello0-ts`
-1. `npm init -y` する
+1. `npm init -y`する
 1. `npm i -D typescript @types/node jest @types/jest`
-1. `npx tsc --init` で出来た tsconfig.json を修正
-1. `npx jest --init` で出来た jest.config.js を修正
-1. `./src` ディレクトリの下にモジュール書く。JSDoc も書く。様々な理由でプロジェクトのルートには書かないほうがいい(example/prod-ts 直下に index.ts 書いて気が付いた)。
-1. `./__tests__` の下にテストコード書く。今回は jest で。
+1. `npx tsc --init`で出来た tsconfig.json を修正
+1. `npx jest --init`で出来た jest.config.js を修正
+1. `./src`ディレクトリの下にモジュール書く。JSDoc も書く。様々な理由でプロジェクトのルートには書かないほうがいい(example/prod-ts 直下に index.ts 書いて気が付いた)。
+1. `./__tests__`の下にテストコード書く。今回は jest で。
 1. package.json を整える。
 1. 余裕があったら example コードを書く
 
@@ -33,14 +33,14 @@ npm run example:dev
 
 1. `npm run watch`
 1. `./src/`の下で Typescript を書く。
-1. `./__tests__/` にテストコードを書く。
-1. watch が `./dist/dev` の下に `src/`と`__tests__/` を自動でトランスパイルしている。watch にエラーが出ていないなら `npm run test` でテストを実行する。
-1. ときおり `npm run example:dev` で `./example/dev/index.mjs` を実行する。
+1. `./__tests__/`にテストコードを書く。
+1. watch が`./dist/dev`の下に`src/`と`__tests__/`を自動でトランスパイルしている。watch にエラーが出ていないなら`npm run test`でテストを実行する。
+1. ときおり`npm run example:dev`で`./example/dev/index.mjs`を実行する。
 
 以上を繰り返す。おおむね新しいバージョンができたな、と思ったら
 
 1. package.json の "version" を増やす
-1. `npm run build` で `./dist/prod` の下にトランスパイルする。
+1. `npm run build`で`./dist/prod`の下にトランスパイルする。
 1. サンプルコードが 3 種類あるので
    - `npm run example:cjs`
    - `npm run example:mjs`
